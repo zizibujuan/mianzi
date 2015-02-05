@@ -6,7 +6,14 @@ import javax.servlet.jsp.JspException;
 
 import com.zizibujuan.mianzi.tag.form.AbstractInputElementTag;
 
-public class HeaderTag extends AbstractInputElementTag{
+/**
+ * 封装html head节点，因为使用amd加载js和css文件，所以这里直接将head封装成一个标签，
+ * 不提供用户自己在header中引用js和css文件的功能
+ * 
+ * @author jinzw
+ * @since 0.0.1
+ */
+public class HeadTag extends AbstractInputElementTag{
 
 	private String title;
 	

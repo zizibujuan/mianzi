@@ -23,9 +23,9 @@
     </tag>
     <tag>
         <!-- 定义标签名 -->
-        <name>Header</name>
+        <name>Head</name>
         <!-- 定义标签处理类 -->
-        <tag-class>com.zizibujuan.mianzi.tag.HeaderTag</tag-class>
+        <tag-class>com.zizibujuan.mianzi.tag.HeadTag</tag-class>
         <!-- 定义标签体为空 -->
         <body-content>empty</body-content>
         <attribute>
@@ -33,5 +33,13 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-    </tag>    
+    </tag>
+    <tag>
+        <!-- 定义标签名 -->
+        <name>Body</name>
+        <!-- 定义标签处理类 -->
+        <tag-class>com.zizibujuan.mianzi.tag.BodyTag</tag-class>
+        <!-- 定义标签体为空 -->
+        <body-content>scriptless</body-content>
+    </tag>  
 </taglib>
