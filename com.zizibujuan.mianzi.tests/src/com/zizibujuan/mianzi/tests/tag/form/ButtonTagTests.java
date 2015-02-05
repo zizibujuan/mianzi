@@ -1,4 +1,4 @@
-package com.zizibujuan.mianzi.tests.tag;
+package com.zizibujuan.mianzi.tests.tag.form;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -9,9 +9,9 @@ import javax.servlet.jsp.PageContext;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.mock.web.MockPageContext;
-import org.springframework.web.servlet.tags.form.TagWriter;
 
-import com.zizibujuan.mianzi.tag.ButtonTag;
+import com.zizibujuan.mianzi.tag.TagWriter;
+import com.zizibujuan.mianzi.tag.form.ButtonTag;
 
 public class ButtonTagTests {
 	private StringWriter writer;

@@ -1,13 +1,8 @@
-package com.zizibujuan.mianzi.tag;
+package com.zizibujuan.mianzi.tag.form;
 
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.JspWriter;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
-
-import org.springframework.web.servlet.tags.form.TagWriter;
 
 /**
  * 按钮标签
@@ -15,8 +10,8 @@ import org.springframework.web.servlet.tags.form.TagWriter;
  * @author jinzw
  * @since 0.0.1
  */
-public class ButtonTag extends SimpleTagSupport{
-	private TagWriter tagWriter;
+public class ButtonTag extends AbstractInputElementTag{
+	
 	
 	private String label;
 	
@@ -36,12 +31,6 @@ public class ButtonTag extends SimpleTagSupport{
 		tagWriter.writeAttribute("is", "d-button");
 		tagWriter.appendValue(getLabel());
 		tagWriter.endTag();
-		
-		//super.doTag();
 	}
 
-	protected TagWriter createTagWriter() {
-		// TODO: TagWriter基于JspContext是否更合适呢
-		return new TagWriter((PageContext)this.getJspContext());
-	}
 }
