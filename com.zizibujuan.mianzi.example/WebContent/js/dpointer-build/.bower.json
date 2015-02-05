@@ -1,0 +1,27 @@
+{
+  "name": "dpointer-build",
+  "version": "0.5.0",
+  "dependencies": {
+    "requirejs-dplugins": "0.5.x"
+  },
+  "devDependencies": {
+    "dpointer": "0.5.0"
+  },
+  "ignore": [
+    ".jshintrc",
+    ".gitattributes",
+    ".travis.yml",
+    "tests",
+    "CONTRIBUTING.md"
+  ],
+  "homepage": "https://github.com/ibm-js/dpointer-build",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.0",
+    "commit": "46360493dd36bfc968a79ad8da84d082838359a8"
+  },
+  "_source": "git://github.com/ibm-js/dpointer-build.git",
+  "_target": "0.5.x",
+  "_originalSource": "dpointer-build"
+}

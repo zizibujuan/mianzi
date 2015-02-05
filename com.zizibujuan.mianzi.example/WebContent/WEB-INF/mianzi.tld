@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>mianzi</short-name>
+    <!-- 定义该标签库的URI -->
+    <uri>http://www.zizibujuan.com/mianzitaglib</uri>
+    <!-- 定义第一个标签 -->
+    <tag>
+        <!-- 定义标签名 -->
+        <name>Button</name>
+        <!-- 定义标签处理类 -->
+        <tag-class>com.zizibujuan.mianzi.tag.ButtonTag</tag-class>
+        <!-- 定义标签体为空 -->
+        <body-content>empty</body-content>
+        <attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+    </tag>
+</taglib>

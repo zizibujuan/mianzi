@@ -1,0 +1,38 @@
+{
+  "name": "requirejs-dplugins",
+  "version": "0.5.0",
+  "description": "AMD plugins for RequireJS",
+  "dependencies": {
+    "lie": ">=2.8",
+    "requirejs": "2.1.x"
+  },
+  "devDependencies": {
+    "jquery": ">=2.1"
+  },
+  "keywords": [
+    "requirejs",
+    "amd",
+    "plugins",
+    "plugin",
+    "i18n",
+    "has"
+  ],
+  "license": "BSD 3-clause",
+  "ignore": [
+    "**/.*",
+    "tests",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/ibm-js/requirejs-dplugins",
+  "_release": "0.5.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.0",
+    "commit": "67275a8b72d73f7425358162992684511c7e0698"
+  },
+  "_source": "git://github.com/ibm-js/requirejs-dplugins.git",
+  "_target": "0.5.x",
+  "_originalSource": "requirejs-dplugins"
+}
