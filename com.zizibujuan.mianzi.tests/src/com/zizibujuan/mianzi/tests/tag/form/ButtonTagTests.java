@@ -13,6 +13,12 @@ import org.springframework.mock.web.MockPageContext;
 import com.zizibujuan.mianzi.tag.TagWriter;
 import com.zizibujuan.mianzi.tag.form.ButtonTag;
 
+/**
+ * 按钮标签测试用例
+ * 
+ * @author jinzw
+ * @since 0.0.1
+ */
 public class ButtonTagTests {
 	private StringWriter writer;
 	private PageContext pageContext;
