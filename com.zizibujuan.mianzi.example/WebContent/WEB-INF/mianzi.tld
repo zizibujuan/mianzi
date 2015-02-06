@@ -7,20 +7,6 @@
     <short-name>mianzi</short-name>
     <!-- 定义该标签库的URI -->
     <uri>http://www.zizibujuan.com/mianzitaglib</uri>
-    <!-- 定义第一个标签 -->
-    <tag>
-        <!-- 定义标签名 -->
-        <name>Button</name>
-        <!-- 定义标签处理类 -->
-        <tag-class>com.zizibujuan.mianzi.tag.form.ButtonTag</tag-class>
-        <!-- 定义标签体为空 -->
-        <body-content>empty</body-content>
-        <attribute>
-			<name>label</name>
-			<required>false</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
-    </tag>
     <tag>
         <!-- 定义标签名 -->
         <name>Head</name>
@@ -35,11 +21,43 @@
 		</attribute>
     </tag>
     <tag>
-        <!-- 定义标签名 -->
         <name>Body</name>
-        <!-- 定义标签处理类 -->
         <tag-class>com.zizibujuan.mianzi.tag.BodyTag</tag-class>
-        <!-- 定义标签体为空 -->
         <body-content>scriptless</body-content>
-    </tag>  
+    </tag>
+    <tag>
+        <name>Button</name>
+        <tag-class>com.zizibujuan.mianzi.tag.form.ButtonTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+			<name>label</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+    </tag>
+    <tag>
+        <name>Checkbox</name>
+        <tag-class>com.zizibujuan.mianzi.tag.form.CheckboxTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>checked</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>disabled</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+    </tag>
 </taglib>

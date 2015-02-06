@@ -12,7 +12,6 @@ import javax.servlet.jsp.JspException;
  */
 public class ButtonTag extends AbstractInputElementTag{
 	
-	
 	private String label;
 	
 	public String getLabel() {
@@ -29,6 +28,9 @@ public class ButtonTag extends AbstractInputElementTag{
 		
 		tagWriter.startTag("button");
 		tagWriter.writeAttribute("is", "d-button");
+		if(isDisabled()){
+			tagWriter.writeAttribute("disabled", "true");
+		}
 		tagWriter.appendValue(getLabel());
 		tagWriter.endTag();
 	}

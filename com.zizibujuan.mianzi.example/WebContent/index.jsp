@@ -25,5 +25,6 @@ require(["deliteful-build/layer"], function () {
 <body>
 form控件
 <a href="form/Button.jsp">按钮</a>
+<a href="form/Checkbox.jsp">复选框</a>
 </body>
 </html>

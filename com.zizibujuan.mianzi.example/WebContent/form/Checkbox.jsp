@@ -3,10 +3,11 @@
 <%@ taglib uri="http://www.zizibujuan.com/mianzitaglib" prefix="mz" %>
 <!DOCTYPE html>
 <html>
-<mz:Head title="Button"/>
+<mz:Head title="Checkbox"/>
 <mz:Body>
-	<mz:Button label="按钮"/>
-	<mz:Button label="按钮失效" disabled="true"/>
+	<label><mz:Checkbox name="option1" checked="true"/>选中</label>
+	<label><mz:Checkbox name="option2"/>未选中</label>
+	<label><mz:Checkbox name="option3" disabled="true"/>失效</label>
 </mz:Body>
 
 <script type="text/javascript">
@@ -16,7 +17,7 @@ require.config({
 require(["deliteful-build/layer"], function () {
     require([
         "delite/register",
-        "deliteful/Button"
+        "deliteful/Checkbox"
     ], function (register){
         register.parse();
         document.body.style.display = "";
