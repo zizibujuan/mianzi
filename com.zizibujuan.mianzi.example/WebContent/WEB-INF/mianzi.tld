@@ -60,4 +60,19 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
     </tag>
+    <tag>
+        <name>Store</name>
+        <tag-class>com.zizibujuan.mianzi.tag.StoreTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>dataSource</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+    </tag>
 </taglib>

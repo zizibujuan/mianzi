@@ -1,10 +1,8 @@
 package com.zizibujuan.mianzi.tag.form;
 
-import javax.servlet.jsp.tagext.SimpleTagSupport;
+import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
 
-import com.zizibujuan.mianzi.tag.TagWriter;
-
-public class AbstractInputElementTag extends SimpleTagSupport{
+public class AbstractInputElementTag extends AbstractHtmlElementTag{
 
 	private String name; // 必填
 	private boolean disabled;
@@ -25,10 +23,5 @@ public class AbstractInputElementTag extends SimpleTagSupport{
 		this.disabled = disabled;
 	}
 	
-	protected TagWriter tagWriter;
-	
-	protected TagWriter createTagWriter() {
-		// TODO: TagWriter基于JspContext是否更合适呢
-		return new TagWriter(this.getJspContext());
-	}
+
 }

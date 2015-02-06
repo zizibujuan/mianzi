@@ -3,7 +3,6 @@ package com.zizibujuan.mianzi.tag;
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 /**
  * 封装body节点，在最后生成js脚本
@@ -23,14 +22,19 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 	});
 	</script>
  * </code>
+ * 
  * @author jinzw
  *
  */
-public class BodyTag extends SimpleTagSupport{
+public class BodyTag extends AbstractHtmlElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		tagWriter = createTagWriter();
+		tagWriter.startTag("body");
+		tagWriter.forceBlock();
 		getJspBody().invoke(null);
+		tagWriter.endTag(true);
 	}
 
 }
