@@ -102,7 +102,7 @@ public class TagWriter {
 	 * @see #writeAttribute(String, String)
 	 */
 	public void writeOptionalAttributeValue(String attributeName, String attributeValue) throws JspException {
-		if (StringUtils.isBlank(attributeValue)) {
+		if (StringUtils.isNotBlank(attributeValue)) {
 			writeAttribute(attributeName, attributeValue);
 		}
 	}
