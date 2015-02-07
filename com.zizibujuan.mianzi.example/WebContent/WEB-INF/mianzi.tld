@@ -75,4 +75,26 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
     </tag>
+    <tag>
+        <name>Combobox</name>
+        <tag-class>com.zizibujuan.mianzi.tag.form.ComboboxTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>store</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>autoFilter</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		
+    </tag>
 </taglib>
