@@ -96,6 +96,41 @@
 		</attribute>
     </tag>
     <tag>
+        <name>Select</name>
+        <tag-class>com.zizibujuan.mianzi.tag.form.SelectTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>store</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+        <attribute>
+			<name>multiple</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>textAttr</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>valueAttr</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>disabledAttr</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+    </tag>
+    <tag>
         <name>LinearLayout</name>
         <tag-class>com.zizibujuan.mianzi.tag.container.LinearLayoutTag</tag-class>
         <body-content>scriptless</body-content>

@@ -9,6 +9,7 @@ import com.zizibujuan.mianzi.tests.tag.container.LinearLayoutTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.ButtonTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.CheckboxTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.ComboboxTagTests;
+import com.zizibujuan.mianzi.tests.tag.form.SelectTagTests;
 
 /**
  * 测试用例套件
@@ -23,7 +24,8 @@ import com.zizibujuan.mianzi.tests.tag.form.ComboboxTagTests;
 	LinearLayoutTagTests.class,
 	ButtonTagTests.class,
 	CheckboxTagTests.class,
-	ComboboxTagTests.class
+	ComboboxTagTests.class,
+	SelectTagTests.class
 })
 public class AllTests {
 

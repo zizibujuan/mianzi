@@ -27,6 +27,7 @@ form控件
 <a href="form/Button.jsp">按钮</a>
 <a href="form/Checkbox.jsp">复选框</a>
 <a href="form/Combobox.jsp">组合框</a>
+<a href="form/Select.jsp">下拉框</a>
 <a href="StoreTagAction">Store</a>
 <a href="container/LinearLayout.jsp">LinearLayout</a>
 </body>

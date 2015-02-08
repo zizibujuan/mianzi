@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
 
-import org.apache.struts2.views.jsp.ui.ComboBoxTag;
 import org.junit.Assert;
 import org.junit.Test;
 

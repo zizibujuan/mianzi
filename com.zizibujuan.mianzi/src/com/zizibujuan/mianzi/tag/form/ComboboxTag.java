@@ -36,10 +36,10 @@ public class ComboboxTag extends AbstractInputElementTag{
 	public void doTag() throws JspException, IOException {
 		tagWriter = createTagWriter();
 		tagWriter.startTag("d-combobox");
-			tagWriter.writeAttribute("name", getName());
-			if(isAutoFilter()){
-				tagWriter.writeAttribute("autoFilter", "true");
-			}
+		tagWriter.writeAttribute("name", getName());
+		if(isAutoFilter()){
+			tagWriter.writeAttribute("autoFilter", "true");
+		}
 			if(StringUtils.isNotBlank(getStore())){
 				tagWriter.startTag("d-list");
 					tagWriter.writeAttribute("store", getStore());
