@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.zizibujuan.mianzi.tag.TagWriter;
 import com.zizibujuan.mianzi.tag.form.ButtonTag;
+import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
 
 /**
  * 按钮标签测试用例

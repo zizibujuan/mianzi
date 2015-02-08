@@ -1,4 +1,4 @@
-package com.zizibujuan.mianzi.tests.tag.form;
+package com.zizibujuan.mianzi.tests.tag;
 
 import java.io.StringWriter;
 

@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.zizibujuan.mianzi.tag.TagWriter;
 import com.zizibujuan.mianzi.tag.form.CheckboxTag;
+import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
 
 /**
  * Checkbox标签测试用例

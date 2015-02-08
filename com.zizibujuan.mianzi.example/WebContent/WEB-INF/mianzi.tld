@@ -22,7 +22,7 @@
     </tag>
     <tag>
         <name>Body</name>
-        <tag-class>com.zizibujuan.mianzi.tag.BodyTag</tag-class>
+        <tag-class>com.zizibujuan.mianzi.tag.container.BodyTag</tag-class>
         <body-content>scriptless</body-content>
     </tag>
     <tag>
@@ -94,7 +94,25 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
-		
-		
+    </tag>
+    <tag>
+        <name>LinearLayout</name>
+        <tag-class>com.zizibujuan.mianzi.tag.container.LinearLayoutTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+			<name>vertical</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>width</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>height</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
     </tag>
 </taglib>

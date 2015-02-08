@@ -1,8 +1,10 @@
-package com.zizibujuan.mianzi.tag;
+package com.zizibujuan.mianzi.tag.container;
 
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
+
+import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
 
 /**
  * 封装body节点，在最后生成js脚本

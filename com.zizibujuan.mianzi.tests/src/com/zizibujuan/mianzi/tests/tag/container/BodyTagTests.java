@@ -1,4 +1,4 @@
-package com.zizibujuan.mianzi.tests.tag.form;
+package com.zizibujuan.mianzi.tests.tag.container;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -10,8 +10,9 @@ import javax.servlet.jsp.tagext.JspFragment;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.zizibujuan.mianzi.tag.BodyTag;
 import com.zizibujuan.mianzi.tag.TagWriter;
+import com.zizibujuan.mianzi.tag.container.BodyTag;
+import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
 
 /**
  * body标签测试用例

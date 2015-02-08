@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.zizibujuan.mianzi.tag.TagWriter;
 import com.zizibujuan.mianzi.tag.form.ComboboxTag;
+import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
 
 /**
  * Combobox标签测试用例
