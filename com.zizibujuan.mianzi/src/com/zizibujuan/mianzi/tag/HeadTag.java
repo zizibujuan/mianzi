@@ -14,6 +14,8 @@ import javax.servlet.jsp.JspException;
 public class HeadTag extends AbstractHtmlElementTag{
 
 	private String title;
+	private String theme; // 如何支持切换主题?
+	
 	
 	public String getTitle() {
 		return title;

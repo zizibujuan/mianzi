@@ -5,15 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.opensymphony.xwork2.ActionSupport;
+import javax.servlet.http.HttpServlet;
 
-public class StoreTagAction extends ActionSupport{
+public class StoreTagServlet extends HttpServlet{
 	private static final long serialVersionUID = -8302520112331823350L;
 	
 	private List<Map<String, String>> list;
 	
 	
 	public List<Map<String, String>> getList() {
+		
 		return list;
 	}
 
@@ -22,14 +23,9 @@ public class StoreTagAction extends ActionSupport{
 		this.list = list;
 	}
 
-
-	@Override
-	public String execute() throws Exception {
-		list = new ArrayList<Map<String,String>>();
-		Map<String, String> map1 = new HashMap<String, String>();
-		map1.put("label", "a");
-		list.add(map1);
-		
-        return SUCCESS;
-    }
+//	
+//	list = new ArrayList<Map<String,String>>();
+//	Map<String, String> map1 = new HashMap<String, String>();
+//	map1.put("label", "a");
+//	list.add(map1);
 }

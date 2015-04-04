@@ -1,11 +1,8 @@
 package com.zizibujuan.mianzi.tag;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
-
-import org.apache.struts2.views.jsp.TagUtils;
-
-import com.opensymphony.xwork2.util.ValueStack;
 
 public class AbstractHtmlElementTag extends SimpleTagSupport{
 
@@ -20,7 +17,12 @@ public class AbstractHtmlElementTag extends SimpleTagSupport{
 		return new TagWriter(this.getJspContext());
 	}
 	
-	protected ValueStack getStack(){
-		return TagUtils.getStack((PageContext)getJspContext());
+	protected ServletRequest getServletRequest() {
+		PageContext pageContext = (PageContext) getJspContext();
+		return pageContext.getRequest();
+	}
+	
+	protected Object findValue(String dataSource) {
+		return getServletRequest().getAttribute(dataSource);
 	}
 }

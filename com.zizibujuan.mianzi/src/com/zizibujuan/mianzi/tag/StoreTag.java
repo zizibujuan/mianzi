@@ -6,8 +6,9 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspFragment;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.struts2.json.JSONException;
-import org.apache.struts2.json.JSONUtil;
+
+import com.zizibujuan.util.json.JSON;
+import com.zizibujuan.util.json.JSONAccessException;
 
 /**
  * Store标签。用来创建数据列表，可被List/Combobox等控件引用。
@@ -45,14 +46,14 @@ public class StoreTag extends AbstractHtmlElementTag{
 		tagWriter.writeAttribute("id", getId());
 		tagWriter.forceBlock();
 		if(StringUtils.isNotBlank(getDataSource())){
-			 Object o = getStack().findValue(getDataSource());
-			 if(o == null){
+			Object bean = findValue(getDataSource());
+			 if(bean == null){
 				 System.out.println("没有找到对应的数据源");
 			 }else{
 				 try {
-					 String tmp = JSONUtil.serialize(o);
-					tagWriter.appendValue(tmp.substring(1, tmp.length()-1));
-				} catch (JSONException e) {
+					 String strJsonArray = JSON.stringify(bean);
+					 tagWriter.appendValue(strJsonArray.substring(1, strJsonArray.length()-1));
+				} catch (JSONAccessException e) {
 					// 如果不是有效的json格式，则打印错误信息，但是不往输出流中写内容
 					e.printStackTrace();
 				}
@@ -66,5 +67,9 @@ public class StoreTag extends AbstractHtmlElementTag{
 		
 		tagWriter.endTag(true);
 	}
+
+
+
+
 
 }
