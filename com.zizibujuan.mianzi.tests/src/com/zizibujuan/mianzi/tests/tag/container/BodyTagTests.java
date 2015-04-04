@@ -61,8 +61,11 @@ public class BodyTagTests extends AbstractTagTests{
 		bodyTag.doTag();
 		
 		String output = getOutput();
-		Assert.assertTrue(output.startsWith("<body>"));
+		Assert.assertTrue(output.startsWith("<body"));
 		Assert.assertTrue(output.endsWith("</body>"));
+		
+		// body默认不显示
+		assertContainsAttribute(output, "style", "display:none");
 	}
 	
 	@Test
@@ -83,8 +86,25 @@ public class BodyTagTests extends AbstractTagTests{
 		bodyTag.doTag();
 		
 		String output = getOutput();
-		Assert.assertTrue(output.startsWith("<body>"));
+		Assert.assertTrue(output.startsWith("<body"));
 		Assert.assertTrue(output.endsWith("</body>"));
 		assertBlockTagContains(output, "aa");
+	}
+	
+	@Test
+	public void testBodyTagWithScriptBlock() throws JspException, IOException{
+		bodyTag.doTag();
+		
+		String output = getOutput();
+		Assert.assertTrue(output.contains("<script type=\"text/javascript\">require([\"deliteful-build/layer\"],function(){require([\"delite/register\",\"requirejs-domready/domReady!\"],function(register){register.parse();document.body.style.display=\"\";});});</script>"));
+	}
+	
+	@Test
+	public void testBodyTagContainWidget() throws JspException, IOException{
+		bodyTag.addModule("Button", "deliteful/Button");
+		bodyTag.addModule("Button", "deliteful/Button");
+		bodyTag.doTag();
+		String output = getOutput();
+		assertBlockTagContains(output, "<script type=\"text/javascript\">require([\"deliteful-build/layer\"],function(){require([\"delite/register\",\"deliteful/Button\",\"requirejs-domready/domReady!\"],function(register,Button){register.parse();document.body.style.display=\"\";});});</script>");
 	}
 }
