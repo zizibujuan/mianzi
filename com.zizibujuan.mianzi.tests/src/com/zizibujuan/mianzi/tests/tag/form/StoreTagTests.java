@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
@@ -16,13 +18,12 @@ import javax.servlet.jsp.tagext.JspFragment;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockPageContext;
 
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.XWorkJUnit4TestCase;
-import com.opensymphony.xwork2.util.ValueStack;
 import com.zizibujuan.mianzi.tag.StoreTag;
 import com.zizibujuan.mianzi.tag.TagWriter;
+import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
 
 /**
  * Store标签测试用例
@@ -30,7 +31,7 @@ import com.zizibujuan.mianzi.tag.TagWriter;
  * @author jinzw
  * @since 0.0.1
  */
-public class StoreTagTests extends XWorkJUnit4TestCase{
+public class StoreTagTests extends AbstractTagTests{
 
 	protected StringWriter writer;
 	protected PageContext pageContext;
@@ -43,24 +44,6 @@ public class StoreTagTests extends XWorkJUnit4TestCase{
 	
 	protected String getOutput(){
 		return this.writer.toString();
-	}
-	protected final void assertContainsAttribute(String output, String attributeName, String attributeValue) {
-		String attributeString = attributeName + "=\"" + attributeValue + "\"";
-		Assert.assertTrue("Expected to find attribute '" + attributeName +
-				"' with value '" + attributeValue +
-				"' in output + '" + output + "'",
-				output.indexOf(attributeString) > -1);
-	}
-
-	protected final void assertAttributeNotPresent(String output, String attributeName) {
-		Assert.assertTrue("Unexpected attribute '" + attributeName + "' in output '" + output + "'.",
-				output.indexOf(attributeName + "=\"") < 0);
-	}
-
-	protected final void assertBlockTagContains(String output, String desiredContents) {
-		String contents = output.substring(output.indexOf(">") + 1, output.lastIndexOf("<"));
-		Assert.assertTrue("Expected to find '" + desiredContents + "' in the contents of block tag '" + output + "'",
-				contents.indexOf(desiredContents) > -1);
 	}
 	
 	@Test
@@ -100,8 +83,8 @@ public class StoreTagTests extends XWorkJUnit4TestCase{
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("label", "a");
 		list1.add(map1);
-		ValueStack vs = ActionContext.getContext().getValueStack();
-		vs.set("list1", list1); // 注意要传List,必须使用valueStack#set方法
+		HttpServletRequest req = new MockHttpServletRequest();
+		req.setAttribute("list1", list1);
 		
 		StoreTag tag = new StoreTag(){
 			@Override
@@ -110,8 +93,8 @@ public class StoreTagTests extends XWorkJUnit4TestCase{
 			}
 
 			@Override
-			protected ValueStack getStack() {
-				return vs;
+			protected ServletRequest getServletRequest() {
+				return req;
 			}
 		};
 		tag.setJspContext(pageContext);

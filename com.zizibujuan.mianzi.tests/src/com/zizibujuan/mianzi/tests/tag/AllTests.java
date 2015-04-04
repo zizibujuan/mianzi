@@ -10,6 +10,7 @@ import com.zizibujuan.mianzi.tests.tag.form.ButtonTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.CheckboxTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.ComboboxTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.SelectTagTests;
+import com.zizibujuan.mianzi.tests.tag.form.StoreTagTests;
 
 /**
  * 测试用例套件
@@ -25,7 +26,8 @@ import com.zizibujuan.mianzi.tests.tag.form.SelectTagTests;
 	ButtonTagTests.class,
 	CheckboxTagTests.class,
 	ComboboxTagTests.class,
-	SelectTagTests.class
+	SelectTagTests.class,
+	StoreTagTests.class
 })
 public class AllTests {
 

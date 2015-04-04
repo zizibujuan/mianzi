@@ -67,9 +67,4 @@ public class StoreTag extends AbstractHtmlElementTag{
 		
 		tagWriter.endTag(true);
 	}
-
-
-
-
-
 }
