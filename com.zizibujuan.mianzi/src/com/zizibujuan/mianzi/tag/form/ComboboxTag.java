@@ -34,6 +34,7 @@ public class ComboboxTag extends AbstractInputElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		addModule("Combobox", "deliteful/Combobox");
 		tagWriter = createTagWriter();
 		tagWriter.startTag("d-combobox");
 		tagWriter.writeAttribute("name", getName());

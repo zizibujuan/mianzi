@@ -63,6 +63,7 @@ public class SelectTag extends AbstractInputElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		addModule("Select", "deliteful/Select");
 		tagWriter = createTagWriter();
 		tagWriter.startTag("d-select");
 		if(isMultiple()){

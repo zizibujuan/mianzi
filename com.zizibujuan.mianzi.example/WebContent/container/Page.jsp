@@ -3,6 +3,8 @@
 <%@ taglib uri="http://www.zizibujuan.com/mianzitaglib" prefix="mz"%>
 
 <mz:Page>
-<mz:Head title="page1">s</mz:Head>
-<mz:Body>d</mz:Body>
+<mz:Head title="page1"></mz:Head>
+<mz:Body>
+<mz:Button label="按钮"/>
+</mz:Body>
 </mz:Page>

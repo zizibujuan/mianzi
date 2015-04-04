@@ -7,7 +7,9 @@ import java.util.List;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspFragment;
 
-import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
+import org.apache.commons.lang3.StringUtils;
+
+import com.zizibujuan.mianzi.tag.AbstractTag;
 import com.zizibujuan.mianzi.tag.ModuleAware;
 import com.zizibujuan.mianzi.tag.ModuleInfo;
 
@@ -33,7 +35,7 @@ import com.zizibujuan.mianzi.tag.ModuleInfo;
  * @author jinzw
  *
  */
-public class BodyTag extends AbstractHtmlElementTag implements ModuleAware{
+public class BodyTag extends AbstractTag implements ModuleAware{
 
 	private List<ModuleInfo> modules = new ArrayList<ModuleInfo>();
 	
@@ -58,6 +60,13 @@ public class BodyTag extends AbstractHtmlElementTag implements ModuleAware{
 
 	private String getJavaScript() {
 		StringBuilder sb = new StringBuilder();
+		sb.append("require.config({baseUrl:\"");
+		String baseUrl = getContextPath();
+		if(StringUtils.isNotBlank(baseUrl)){
+			baseUrl += "/";
+		}
+		sb.append(baseUrl);
+		sb.append("js/\"});");
 		sb.append("require([\"deliteful-build/layer\"],function(){require([\"delite/register\","); 
 		for(ModuleInfo m : modules){
 			sb.append("\"").append(m.getFullModuleName()).append("\",");

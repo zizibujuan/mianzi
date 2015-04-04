@@ -1,8 +1,8 @@
 package com.zizibujuan.mianzi.tag.form;
 
-import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
+import com.zizibujuan.mianzi.tag.DelitefulWidget;
 
-public class AbstractInputElementTag extends AbstractHtmlElementTag{
+public class AbstractInputElementTag extends DelitefulWidget{
 
 	private String name; // 必填
 	private boolean disabled;
@@ -22,6 +22,4 @@ public class AbstractInputElementTag extends AbstractHtmlElementTag{
 	public void setDisabled(boolean disabled) {
 		this.disabled = disabled;
 	}
-	
-
 }

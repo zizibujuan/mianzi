@@ -18,7 +18,7 @@ import com.zizibujuan.util.json.JSONAccessException;
  * @author jinzw
  * @since 0.0.1
  */
-public class StoreTag extends AbstractHtmlElementTag{
+public class StoreTag extends DelitefulWidget{
 	
 	private String id; // 必填
 	private String dataSource; // 数据源，从Action中获取dataSource对应变量的值
@@ -41,6 +41,7 @@ public class StoreTag extends AbstractHtmlElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		addModule("Store", "deliteful/Store");
 		tagWriter = createTagWriter();
 		tagWriter.startTag("d-store");
 		tagWriter.writeAttribute("id", getId());

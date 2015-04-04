@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspFragment;
 
-import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
+import com.zizibujuan.mianzi.tag.AbstractTag;
 
 /**
  * 封装html head节点，因为使用amd加载js和css文件，所以这里直接将head封装成一个标签，
@@ -16,7 +16,7 @@ import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
  * @author jinzw
  * @since 0.0.1
  */
-public class HeadTag extends AbstractHtmlElementTag{
+public class HeadTag extends AbstractTag{
 
 	private String title;
 	//private String theme; // 如何支持切换主题?

@@ -24,6 +24,7 @@ public class CheckboxTag extends AbstractInputElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		addModule("Checkbox", "deliteful/Checkbox");
 		tagWriter = createTagWriter();
 		tagWriter.startTag("d-checkbox");
 			tagWriter.writeAttribute("name", getName());

@@ -8,14 +8,14 @@ import javax.servlet.jsp.tagext.JspFragment;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
-import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
+import com.zizibujuan.mianzi.tag.AbstractTag;
 
 /**
  * 线性布局标签，支持垂直和水平两种布局方式
  * @author jinzw
  *
  */
-public class LinearLayoutTag extends AbstractHtmlElementTag{
+public class LinearLayoutTag extends AbstractTag{
 
 	private boolean vertical = true; // 默认为垂直布局
 	private String width;// 有三种类型的值：1没有设置；2固定宽度;3百分比宽度

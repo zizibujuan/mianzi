@@ -6,7 +6,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-public class AbstractHtmlElementTag extends SimpleTagSupport{
+public class AbstractTag extends SimpleTagSupport{
 
 	protected TagWriter tagWriter;
 	

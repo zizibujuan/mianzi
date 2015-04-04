@@ -24,6 +24,8 @@ public class ButtonTag extends AbstractInputElementTag{
 
 	@Override
 	public void doTag() throws JspException, IOException {
+		addModule("Button", "deliteful/Button");
+		
 		tagWriter = createTagWriter();
 		
 		tagWriter.startTag("button");
