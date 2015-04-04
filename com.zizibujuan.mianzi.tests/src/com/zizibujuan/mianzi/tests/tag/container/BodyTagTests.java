@@ -7,7 +7,9 @@ import javax.servlet.jsp.JspContext;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.JspFragment;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.zizibujuan.mianzi.tag.TagWriter;
@@ -22,18 +24,22 @@ import com.zizibujuan.mianzi.tests.tag.AbstractTagTests;
  */
 public class BodyTagTests extends AbstractTagTests{
 
-	@Test
-	public void testBodyTag() throws JspException, IOException{
-		BodyTag tag = new BodyTag(){
+	private BodyTag bodyTag;
+	
+	@Before
+	public void setUp(){
+		bodyTag = new BodyTag(){
 			@Override
 			protected TagWriter createTagWriter() {
 				return new TagWriter(writer);
 			}
 		};
-		tag.setJspContext(pageContext);
+		bodyTag.setJspContext(pageContext);
+		
 		JspFragment jspBody = new JspFragment(){
 			@Override
 			public void invoke(Writer w) throws JspException, IOException {
+				
 			}
 			
 			@Override
@@ -41,8 +47,18 @@ public class BodyTagTests extends AbstractTagTests{
 				return pageContext;
 			}
 		};
-		tag.setJspBody(jspBody);
-		tag.doTag();
+		bodyTag.setJspBody(jspBody);
+	}
+
+	@After
+	public void tearDown(){
+		bodyTag = null;
+	}
+	@Test
+	public void testBodyTag() throws JspException, IOException{
+
+
+		bodyTag.doTag();
 		
 		String output = getOutput();
 		Assert.assertTrue(output.startsWith("<body>"));
@@ -51,13 +67,6 @@ public class BodyTagTests extends AbstractTagTests{
 	
 	@Test
 	public void testBodyTagWithContent() throws JspException, IOException{
-		BodyTag tag = new BodyTag(){
-			@Override
-			protected TagWriter createTagWriter() {
-				return new TagWriter(writer);
-			}
-		};
-		tag.setJspContext(pageContext);
 		JspFragment jspBody = new JspFragment() {
 			
 			@Override
@@ -70,12 +79,12 @@ public class BodyTagTests extends AbstractTagTests{
 				return pageContext;
 			}
 		};
-		tag.setJspBody(jspBody);
-		
-		tag.doTag();
+		bodyTag.setJspBody(jspBody);
+		bodyTag.doTag();
 		
 		String output = getOutput();
 		Assert.assertTrue(output.startsWith("<body>"));
 		Assert.assertTrue(output.endsWith("</body>"));
+		assertBlockTagContains(output, "aa");
 	}
 }

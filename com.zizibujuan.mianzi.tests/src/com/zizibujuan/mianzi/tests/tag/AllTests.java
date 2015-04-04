@@ -6,6 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import com.zizibujuan.mianzi.tests.tag.container.BodyTagTests;
 import com.zizibujuan.mianzi.tests.tag.container.LinearLayoutTagTests;
+import com.zizibujuan.mianzi.tests.tag.container.PageTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.ButtonTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.CheckboxTagTests;
 import com.zizibujuan.mianzi.tests.tag.form.ComboboxTagTests;
@@ -27,7 +28,8 @@ import com.zizibujuan.mianzi.tests.tag.form.StoreTagTests;
 	CheckboxTagTests.class,
 	ComboboxTagTests.class,
 	SelectTagTests.class,
-	StoreTagTests.class
+	StoreTagTests.class,
+	PageTagTests.class
 })
 public class AllTests {
 

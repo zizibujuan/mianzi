@@ -1,5 +1,7 @@
 package com.zizibujuan.mianzi.tag;
 
+import java.io.Writer;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
@@ -15,6 +17,10 @@ public class AbstractHtmlElementTag extends SimpleTagSupport{
 	protected TagWriter createTagWriter() {
 		// TODO: TagWriter基于JspContext是否更合适呢
 		return new TagWriter(this.getJspContext());
+	}
+	
+	protected Writer getWriter(){
+		return getJspContext().getOut();
 	}
 	
 	protected ServletRequest getServletRequest() {

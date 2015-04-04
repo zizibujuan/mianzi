@@ -7,13 +7,21 @@
     <short-name>mianzi</short-name>
     <!-- 定义该标签库的URI -->
     <uri>http://www.zizibujuan.com/mianzitaglib</uri>
+   
+   <tag>
+        <!-- 定义标签名 -->
+        <name>Page</name>
+        <!-- 定义标签处理类 -->
+        <tag-class>com.zizibujuan.mianzi.tag.container.PageTag</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    
     <tag>
         <!-- 定义标签名 -->
         <name>Head</name>
         <!-- 定义标签处理类 -->
-        <tag-class>com.zizibujuan.mianzi.tag.HeadTag</tag-class>
-        <!-- 定义标签体为空 -->
-        <body-content>empty</body-content>
+        <tag-class>com.zizibujuan.mianzi.tag.container.HeadTag</tag-class>
+        <body-content>scriptless</body-content>
         <attribute>
 			<name>title</name>
 			<required>false</required>

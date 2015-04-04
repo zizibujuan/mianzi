@@ -1,12 +1,17 @@
-package com.zizibujuan.mianzi.tag;
+package com.zizibujuan.mianzi.tag.container;
 
 import java.io.IOException;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.tagext.JspFragment;
+
+import com.zizibujuan.mianzi.tag.AbstractHtmlElementTag;
 
 /**
  * 封装html head节点，因为使用amd加载js和css文件，所以这里直接将head封装成一个标签，
- * 不提供用户自己在header中引用js和css文件的功能
+ * 不提供用户自己在header中引用js和css文件的功能。
+ * 
+ * head标签中只建议放meta标签
  * 
  * @author jinzw
  * @since 0.0.1
@@ -14,7 +19,7 @@ import javax.servlet.jsp.JspException;
 public class HeadTag extends AbstractHtmlElementTag{
 
 	private String title;
-	private String theme; // 如何支持切换主题?
+	//private String theme; // 如何支持切换主题?
 	
 	
 	public String getTitle() {
@@ -41,6 +46,11 @@ public class HeadTag extends AbstractHtmlElementTag{
 				tagWriter.writeAttribute("http-equiv", "Content-Type");
 				tagWriter.writeAttribute("content", "text/html; charset=UTF-8");
 			tagWriter.endTag(false);
+			
+			JspFragment jspBody = getJspBody(); // 如果body中没有内容，则jspBody为null
+			if(jspBody != null){
+				jspBody.invoke(null);
+			}
 			
 			tagWriter.startTag("title");
 				tagWriter.appendValue(getTitle());
